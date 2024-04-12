@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Unbounded:wght@200..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --color-bg-light: #ffffff;
+    --color-text-light: #000000;
+    --color-bg-dark: #333333;
+    --color-text-dark: #ffffff;
+}
+
+.font-unbounded {
+    font-family: "Unbounded", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+.font-open-sans {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+html {
+    background: #222222;
+}
+
+.scrollbar {
+    overflow: auto;
+    padding: 0 10px;
+}
+
+.scrollbar::-webkit-scrollbar {
+    background-color: #b4b4b4;
+    width: 12px;
+    border-radius: 10px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(.5, rgb(163, 222, 0)), color-stop(1, #BBFF00));
+    /* background-image: -webkit-gradient(linear, left bottom, left top, color-stop(.5, #a520ca), color-stop(1, #2681cc)); */
+    
+    border-radius: 10px;
+}
