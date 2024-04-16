@@ -1,9 +1,11 @@
+import BubbleOcean from '@/components/BubbleOcean';
 import { Providers } from '@/components/Providers';
+import { Toaster } from "@/components/ui/sonner";
 import RandomImage from '@/utils/RandomImage';
 import type { AppProps } from 'next/app';
+import Head from 'next/head';
 import Router, { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import Footer from '../components/Footer';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -63,8 +65,29 @@ function MyApp({ Component, pageProps }: AppProps) {
     //     );
     // }
 
+    // Sonner
+    {/* import { Button } from "@/components/ui/button";
+        import { toast } from "sonner";
+
+        <Button
+            variant="outline"
+            onClick={() =>
+                toast("Event has been created", {
+                    description: "Sunday, December 03, 2023 at 9:00 AM",
+                    action: {
+                        label: "Undo",
+                        onClick: () => console.log("Undo"),
+                    },
+                })
+            }
+        >
+            Show Toast
+        </Button> 
+    */}
+
+
     if (loading) return (
-        <div className="w-full h-full fixed top-0 left-0 z-[99999]">
+        <div className="w-full h-full fixed top-0 left-0 z-[99999] bg-[#222222]">
             <div className="flex justify-center items-center mt-[40vh] animate-pulse">
                 <RandomImage />
             </div>
@@ -72,29 +95,32 @@ function MyApp({ Component, pageProps }: AppProps) {
     )
 
     return (
-        <Providers>
-            <div className='flex flex-col min-h-screen'>
-                <main className='container mx-auto max-w-2xl flex-grow py-5 flex flex-col'>
-                    <aside className="fixed inset-x-0 left-[50%] -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
-                        <div className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-[#0038FF] opacity-50 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"></div>
-                    </aside>
+        <>
+            <Head>
+                <meta name="viewport" content="width=device-width" />
+            </Head>
+            <Providers>
+                <div className='flex flex-col min-h-screen bg-gradient-to-b from-[#027B34] to-[#003715]'>
+                    <main className='mx-auto max-w-2xl flex-grow py-4 flex flex-col z-10 w-full relative'>
+                        {/* <nav className='flex items-center justify-between px-4'>
+                                <h1 className='text-2xl leading-6 font-[700] text-[#fff] font-unbounded'>Forma</h1>
+                                <button
+                                type="button"
+                                className="bg-[#fff] opacity-[12%] rounded-full w-12 h-12 text-center"
+                                onClick={() => router.push('/')}
+                                />
+                            </nav> */}
+                        <section className='flex flex-col flex-grow transition-all'>
+                            <Component {...pageProps} />
+                        </section>
+                        <BubbleOcean />
+                    </main>
+                    {/* <Footer /> */}
+                </div>
 
-                    <nav className='flex items-center justify-between px-4'>
-                        <h1 className='text-2xl leading-6 font-[700] text-[#fff] font-unbounded'>Forma</h1>
-                        <button
-                            type="button"
-                            className="bg-[#fff] opacity-[12%] rounded-full w-12 h-12 text-center"
-                            onClick={() => router.push('/')}
-                        />
-                    </nav>
-
-                    <section className='flex flex-col flex-grow mb-[4rem] transition-all'>
-                        <Component {...pageProps} />
-                    </section>
-                </main>
-                <Footer />
-            </div>
-        </Providers>
+                <Toaster />
+            </Providers>
+        </>
     );
 }
 

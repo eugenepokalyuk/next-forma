@@ -1,0 +1,93 @@
+.ocean {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+.bubble {
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+    border-radius: 50%;
+    animation-name: rise;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    opacity: 0.06;
+}
+.octocat {
+    height: 300px;
+    width: 300px;
+    /* background: url(https://raw.githubusercontent.com/codypearce/codepen-files/main/pens/octocat/octocat.png) left center; */
+    background: rgb(119, 246, 99, 0.3);
+    animation: animateSprite 15s steps(1) infinite, swim 15s ease-in-out infinite;
+    position: absolute;
+    right: -200px;
+    top: 50%;
+    margin-top: -150px;
+    z-index: 100;
+    filter: blur(100px);
+}
+@keyframes rise {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100vh);
+    }
+}
+@keyframes animateSprite {
+    0% {
+        background-position: -600px;
+    }
+    20% {
+        background-position: 0px;
+    }
+    25% {
+        background-position: -200px;
+    }
+    35% {
+        background-position: -400px;
+    }
+    40% {
+        background-position: -400px;
+    }
+    50% {
+        background-position: -200px;
+    }
+    60% {
+        background-position: -0px;
+    }
+    67% {
+        background-position: -600px;
+    }
+
+    100% {
+        background-position: -600px;
+    }
+}
+@keyframes swim {
+    0% {
+        transform: translate(0, 0);
+    }
+    20% {
+        transform: translate(calc(-50vw - 100px), 0);
+    }
+    25% {
+        transform: translate(calc(-50vw - 100px), 0);
+    }
+    35% {
+        transform: translate(calc(-50vw - 100px), -20vh);
+    }
+    50% {
+        transform: translate(-25vw, 15vh);
+    }
+    60% {
+        transform: translate(-25vw, -20vh);
+    }
+    67% {
+        transform: translate(-25vw, -20vh);
+    }
+
+    100% {
+        transform: translate(calc(-100vw - 300px), 0);
+    }
+}
