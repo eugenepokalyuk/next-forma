@@ -1,16 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Button } from './ui/button';
 
-interface PersonalRecommendationsProps {
-    // sleepTitle: string;
-    // sleepInfo: string;
-    // sleepAction: string;
-    // progressTitle: string;
-    // progressInfo: string;
-    // recipeTitle: string;
-    // recipeInfo: string;
-    // recipeAction: string;
-}
+interface PersonalRecommendationsProps { }
 
 const PersonalRecommendations: React.FC<PersonalRecommendationsProps> = ({
 }) => {
@@ -41,13 +32,14 @@ const PersonalRecommendations: React.FC<PersonalRecommendationsProps> = ({
     }, [progress]);
 
     return (
-        <div className="bg-[#046207] mt-4 py-8 px-4 rounded-[40px]">
-            <div className="text-white text-[22px] leading-6 font-medium mb-6 text-center font-sf-pro-display">
+        // rounded-t-[40px]
+        <div className="py-8 px-4">
+            <div className="text-[#444444] text-[22px] leading-6 font-medium mb-6 text-left font-sf-pro-display">
                 Персональные рекомендации
             </div>
             <div className="flex flex-col gap-y-2">
                 <div className='grid grid-cols-2 gap-2 w-full'>
-                    <div className="bg-[#333333] flex flex-col justify-between p-3 rounded-2xl">
+                    <div className="bg-[#FFFFFF] border border-[#DEDEDE]/[.64] flex flex-col justify-between p-3 rounded-2xl">
                         <div>
                             <div className='mb-4'>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="38" height="40" viewBox="0 0 38 40" fill="none">
@@ -56,36 +48,43 @@ const PersonalRecommendations: React.FC<PersonalRecommendationsProps> = ({
                             </div>
 
                             <div>
-                                <div className="text-base leading-[18px] font-sf-pro-display text-[#FFFFFF] mb-[6px]">Последнюю неделю <span className='text-[#a45bff] whitespace-nowrap'>вы мало спите</span></div>
-                                <div className="text-xs leading-[18px] font-sf-pro-display text-[#FFFFFF]/[.56]">в среднем <br /> 6 часов 50 минут</div>
+                                <div className="text-base leading-[18px] font-sf-pro-display text-[#444444] mb-[6px]">Последнюю неделю <span className='text-[#a45bff] whitespace-nowrap'>вы мало спите</span></div>
+                                <div className="text-xs leading-3 font-sf-pro-display text-[#444444]/[.56]">в среднем <br /> 6 часов 50 минут</div>
                             </div>
                         </div>
 
-                        <button className="bg-[#FFFFFF0A] text-white font-sf-pro-display py-[9px] w-full rounded-lg">
+                        <button className="bg-[#444444]/[.06] text-[#444444] font-sf-pro-display py-[9px] w-full rounded-lg text-sm">
                             Наладить сон
                         </button>
                     </div>
 
                     <div className='flex flex-col gap-y-2 w-full'>
-                        <div className="bg-[#000000]/[.12] backdrop-blur-sm flex flex-col items-start justify-start w-full h-1/2 rounded-2xl text-center aspect-square p-3">
-                            <p className='text-[#FFFFFF] text-sm leading-4 font-sf-pro-display font-normal text-left w-10/12'>Ваш прогресс за прошлую неделю</p>
-                            <div>
-                                <svg width="109" height="86" viewBox="0 0 109 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <div className="bg-[#FFFFFF] border border-[#DEDEDE]/[.64] backdrop-blur-sm flex flex-col items-start justify-start w-full h-1/2 rounded-2xl text-center aspect-square p-3 relative">
+                            <p className='text-[#444444] text-sm leading-4 font-sf-pro-display font-normal text-left w-10/12'>Ваш прогресс за прошлую неделю</p>
+                            <div className='absolute bottom-0 right-0'>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="113"
+                                    height="89"
+                                    viewBox="0 0 113 89"
+                                    fill="none"
+                                >
                                     <path
-                                        d="M21 55.4996C2.60258 52.4261 0.5 90.4996 0.5 90.4996H116C116 90.4996 139.3 -2.9491 105.5 0.50014C81.3211 2.96755 96.5 49.5002 77 51.9996C65.4929 53.4745 67.1011 31.4386 55.5 31.4996C40.2936 31.5795 54.7045 67.2522 39.5 66.9996C30.9944 66.8583 29.3905 56.9013 21 55.4996Z"
-                                        fill="#111111"
-                                        fillOpacity="0.16"
-                                        stroke="white"
-                                        strokeOpacity="0.64"
-                                        strokeWidth="0.5"
+                                        d="M22 56.4996C3.60258 53.4261 1.5 91.4996 1.5 91.4996H117C117 91.4996 140.3 -1.94907 106.5 1.50017C82.3211 3.96759 97.5 50.5002 78 52.9996C66.4929 54.4745 68.1011 32.4386 56.5 32.4996C41.2936 32.5796 55.7045 68.2522 40.5 67.9996C31.9944 67.8583 30.3905 57.9014 22 56.4996Z"
+                                        fill="#BBFF00"
+                                        fillOpacity="0.24"
+                                        stroke="#BBFF00"
+                                        strokeWidth="2"
                                         ref={pathRef}
                                     />
-                                    {/* Circle representing the progress */}
+
                                     <circle
                                         cx={circlePosition.cx}
                                         cy={circlePosition.cy}
-                                        r="3"
-                                        fill="orange"
+                                        r="6"
+                                        fill="#444444"
+                                        stroke="#BBFF00"
+                                        stroke-width="3"
                                     />
                                 </svg>
                             </div>
@@ -102,14 +101,14 @@ const PersonalRecommendations: React.FC<PersonalRecommendationsProps> = ({
                     </div>
                 </div>
 
-                <div className="bg-[#000000]/[.12] backdrop-blur-sm rounded-2xl p-3 relative overflow-hidden">
+                <div className="bg-[#FFFFFF] border border-[#DEDEDE]/[.64] backdrop-blur-sm rounded-2xl p-3 relative overflow-hidden">
                     <div className="w-[175px] mb-[6px]">
-                        <p className='font-sf-pro-display text-[#FFFFFF] text-base leading-[18px]'>Рецепты для похудения на основе ваших предпочтений</p>
+                        <p className='font-sf-pro-display text-[#444444] text-base leading-[18px]'>Рецепты для похудения на основе ваших предпочтений</p>
                     </div>
                     <div className="w-[112px]">
-                        <p className='font-sf-pro-display text-[#FFFFFF]/[.56] text-xs leading-[14px]'>Рецепты курируются диетологами</p>
+                        <p className='font-sf-pro-display text-[#444444]/[.56] text-xs leading-[14px]'>Рецепты курируются диетологами</p>
                     </div>
-                    <Button className="font-sf-pro-display text-[#000000] bg-[#BBFF00] px-[21px] py-[9px] rounded-lg text-xs leading-[14px] font-normal mt-9">
+                    <Button className="font-sf-pro-display text-[#444444] bg-[#BBFF00] px-[21px] py-[9px] rounded-lg text-xs leading-[14px] font-normal mt-9">
                         Смотреть
                     </Button>
 

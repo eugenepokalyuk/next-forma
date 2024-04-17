@@ -26,8 +26,8 @@ const BubbleOcean = () => {
     }, []);
 
     return (
-        <div className='fixed z-[-1]'>
-            <div className={styles.ocean}>
+        <div className='fixed'>
+            <div className={`${styles.ocean}`}>
                 {bubbles.map((bubble: TBubble) => (
                     <div
                         key={bubble.id}

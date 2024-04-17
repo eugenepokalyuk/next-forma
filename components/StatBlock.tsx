@@ -15,13 +15,13 @@ const StatBlock: React.FC = () => {
 
     return (
         <div className='w-full px-2'>
-            <div className="bg-[#000000]/[.12] backdrop-blur-sm rounded-xl py-[10px] w-full">
+            <div className="bg-[#FFFFFF] border border-[#DEDEDE]/[.64] backdrop-blur-sm rounded-xl py-[10px] w-full">
                 {dataItems.map((item, index) => (
-                    <div key={index} className={`flex items-center justify-between text-white pl-[12px] pr-[10px] ${dataItems.length - 1 > index ? "border-b border-[#FFFFFF]/[0.1] pb-[10px] mb-[10px]" : ""}`}>
-                        <span className="font-sf-pro-display text-xs font-normal text-[#FFFFFF]/[.32] flex-1">{item.label}</span>
-                        <span className="w-12 text-right font-sf-pro-display text-xs font-normal text-[#FFFFFF] pr-2">{item.currentValue}</span>
-                        <span className="w-12 text-right font-sf-pro-display text-xs font-normal text-[#FFFFFF]/[.32] pr-4">{item.maxValue}</span>
-                        <button className="flex justify-center items-center bg-[#FFFFFF]/[.12] backdrop-blur-sm rounded-xl w-[32px] h-[32px]">
+                    <div key={index} className={`flex items-center justify-between text-[#444444] pl-[12px] pr-[10px] ${dataItems.length - 1 > index ? "border-b border-[#FFFFFF]/[0.1] pb-[10px] mb-[10px]" : ""}`}>
+                        <span className="font-sf-pro-display text-xs font-normal text-[#444444]/[.32] flex-1">{item.label}</span>
+                        <span className="w-12 text-right font-sf-pro-display text-xs font-normal text-[#444444] pr-2">{item.currentValue}</span>
+                        <span className="w-12 text-right font-sf-pro-display text-xs font-normal text-[#444444]/[.32] pr-4">{item.maxValue}</span>
+                        <button className="flex justify-center items-center bg-[#444444]/[.12] backdrop-blur-sm rounded-xl w-[32px] h-[32px]">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
                                 <g opacity="0.48">
                                     <path d="M5 0H7V12H5V0Z" fill="white" />

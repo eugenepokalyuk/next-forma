@@ -1,4 +1,3 @@
-import BubbleOcean from '@/components/BubbleOcean/BubbleOcean';
 import { Providers } from '@/components/Providers';
 import { Toaster } from "@/components/ui/sonner";
 import RandomImage from '@/utils/RandomImage';
@@ -100,20 +99,13 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <meta name="viewport" content="width=device-width" />
             </Head>
             <Providers>
-                <div className='flex flex-col min-h-screen bg-gradient-to-b from-[#027B34] to-[#003715]'>
-                    <main className='mx-auto max-w-2xl flex-grow py-4 flex flex-col z-10 w-full relative'>
-                        {/* <nav className='flex items-center justify-between px-4'>
-                                <h1 className='text-2xl leading-6 font-[700] text-[#fff] font-unbounded'>Forma</h1>
-                                <button
-                                type="button"
-                                className="bg-[#fff] opacity-[12%] rounded-full w-12 h-12 text-center"
-                                onClick={() => router.push('/')}
-                                />
-                            </nav> */}
+                {/* min-h-screen */}
+                <div className='flex flex-col bg-[#EDFBEB]'>
+                    {/* py-4  */}
+                    <main className='mx-auto max-w-2xl flex-grow flex flex-col z-10 w-full relative'>
                         <section className='flex flex-col flex-grow transition-all'>
                             <Component {...pageProps} />
                         </section>
-                        <BubbleOcean />
                     </main>
                     {/* <Footer /> */}
                 </div>
