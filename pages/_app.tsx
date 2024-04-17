@@ -1,4 +1,4 @@
-import BubbleOcean from '@/components/BubbleOcean';
+import BubbleOcean from '@/components/BubbleOcean/BubbleOcean';
 import { Providers } from '@/components/Providers';
 import { Toaster } from "@/components/ui/sonner";
 import RandomImage from '@/utils/RandomImage';

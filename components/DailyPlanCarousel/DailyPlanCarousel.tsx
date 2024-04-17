@@ -1,7 +1,8 @@
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import React from 'react';
+import { Badge } from '../ui/badge';
+import { Card, CardContent } from '../ui/card';
+import { Carousel, CarouselContent, CarouselItem } from '../ui/carousel';
+import styles from './DailyPlanCarousel.module.css';
 
 interface SliderItem {
     id: number;
@@ -50,20 +51,16 @@ const DailyPlanCarousel: React.FC = () => {
             emoji: '🖕',
         }
     ];
-
     return (
-        <Carousel className="w-full">
-            <CarouselContent className="mx-0 max-sm:-ml-1">
-                {/* {Array.from({ length: 5 }).map((_, index) => ( */}
+        <Carousel className='w-full h-[240px]'>
+            <CarouselContent>
                 {sliderItems.map((item, index) => (
-                    <CarouselItem key={index} className="mt-4 basis-1/2">
+                    <CarouselItem key={index} className={styles.carouselItem}>
                         <div>
-                            <Card className="bg-transparent border-transparent">
-                                <CardContent className="flex flex-col aspect-square items-center justify-center gap-y-6">
-
+                            <Card className='bg-transparent border-transparent'>
+                                <CardContent className='flex space-x-2 sm:space-x-4 lg:space-x-6'>
                                     <div className="relative h-[208px] bg-[#000000]/[.12] backdrop-blur-sm rounded-xl w-[156px] flex flex-col justify-between">
                                         <div className="absolute -top-8 left-[50%] translate-x-[-50%] text-center">
-                                            {/* <img className="w-full" src={item.imageUrl} alt={item.title} /> */}
                                             <p className="text-[80px]">{item.emoji}</p>
                                         </div>
 
@@ -100,7 +97,6 @@ const DailyPlanCarousel: React.FC = () => {
                         </div>
                     </CarouselItem>
                 ))}
-                {/* ))} */}
             </CarouselContent>
         </Carousel>
     );

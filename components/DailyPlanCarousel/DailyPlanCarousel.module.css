@@ -1,0 +1,6 @@
+.carouselItem {
+    margin-top: 12px;
+    display: flex;
+    flex-basis: 10.5rem;
+    padding-left: 0;
+}
